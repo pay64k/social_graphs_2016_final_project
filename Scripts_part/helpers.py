@@ -2,7 +2,7 @@ import time
 
 
 def write_to_file(data, filename, path):
-    with open(path + filename, "a", 0) as text_file:
+    with open(path + filename, "w") as text_file:
         text_file.write(data)
     text_file.close()
 

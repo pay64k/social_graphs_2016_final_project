@@ -17,5 +17,7 @@ def parse_script_list(filename, path):
         temp = raw_link.partition("/Movie Scripts/")[2]
         temp = temp.replace(" ","-")
         temp = temp.replace("-Script", "")
+        temp = temp.replace("..", ".")
+        temp = temp.replace(":","")
         actual_links.append(temp)
     return actual_links
