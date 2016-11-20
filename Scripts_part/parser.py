@@ -35,6 +35,6 @@ def parse_one_script(path, filename, output_path):
         return filename
 
 
-def clean_one_script(path, filename, output_path):
+def clean_one_script_from_tags(path, filename, output_path):
     h.write_to_file(ts.strip_tags(h.open_file(filename,path)),filename,output_path)
 
