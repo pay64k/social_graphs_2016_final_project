@@ -1,3 +1,4 @@
+import os
 import time
 
 
@@ -14,3 +15,8 @@ def open_file(filename, path):
 
 def timestamp():
     return str(time.strftime("%Y%m%d-%H%M%S"))
+
+
+def determine_file_size(path, filename):
+    statinfo = os.stat(path + filename)
+    return statinfo.st_size
