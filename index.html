@@ -9,13 +9,48 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <title>Social Graphs 2016 Final Assignment</title>
 
+    <!-- scrolling bar template home: https://startbootstrap.com/template-overviews/scrolling-nav/ -->
+    
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <style type="text/css">
+      .block{
+        display: inline-block;
+      }
+    </style>
+
+    <style>
+
+    .node circle {
+      fill: #999;
+    }
+
+    .node text {
+      font: 10px sans-serif;
+    }
+
+    .node--internal circle {
+      fill: #555;
+    }
+
+    .node--internal text {
+      text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    }
+
+    .link {
+      fill: none;
+      stroke: #555;
+      stroke-opacity: 0.4;
+      stroke-width: 1.5px;
+    }
+
+</style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,13 +86,16 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#Section1">Section 1</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#Section2">Section 2</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#Section3">Section 3</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Section4">Section 4</a>
                     </li>
                 </ul>
             </div>
@@ -67,12 +105,13 @@
     </nav>
 
     <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
+    <section id="intro" class="normal-section">
+        <div class="container block">
+            <div class="row block">
                 <div class="col-lg-12">
                     <h1>Scrolling Nav</h1>
                     <p><strong>Usage Instructions:</strong> Make sure to include the <code>scrolling-nav.js</code>, <code>jquery.easing.min.js</code>, and <code>scrolling-nav.css</code> files. To make a link smooth scroll to another section on the page, give the link the <code>.page-scroll</code> class and set the link target to a corresponding ID on the page.</p>
+
                     <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
                 </div>
             </div>
@@ -80,33 +119,47 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
+    <section id="Section1" class="normal-section block">
+        <div class="container block">
+            <div class="row block">
                 <div class="col-lg-12">
-                    <h1>About Section</h1>
+                    <h1>Section 1</h1>
+                      <div class="container block" id="graph1">
+                        <svg width="960" height="2000"></svg>
+                      </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Services Section</h1>
+    <section id="Section2" class="normal-section block">
+        <div class="container block">
+            <div class="row block">
+                <div class="col-lg-12 block">
+                    <h1>Section 2</h1>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact Section</h1>
+    <section id="Section3" class="normal-section block">
+        <div class="container block">
+            <div class="row block">
+                <div class="col-lg-12 block">
+                    <h1>Section 3</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Section4" class="normal-section block">
+        <div class="container block">
+            <div class="row block">
+                <div class="col-lg-12 block">
+                    <h1>Section 4</h1>
                 </div>
             </div>
         </div>
@@ -115,12 +168,65 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
+    <!-- d3 -->
+    <script src="js/d3.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/scrolling-nav.js"></script>
+
+<script>
+
+var svg = d3.select("#graph1").select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height"),
+    g = svg.append("g").attr("transform", "translate(40,0)");
+
+var tree = d3.cluster()
+    .size([height, width - 160]);
+
+var stratify = d3.stratify()
+    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+
+d3.csv("flare.csv", function(error, data) {
+  if (error) throw error;
+
+  var root = stratify(data)
+      .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); });
+
+  tree(root);
+
+  var link = g.selectAll(".link")
+      .data(root.descendants().slice(1))
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        return "M" + d.y + "," + d.x
+            + "C" + (d.parent.y + 100) + "," + d.x
+            + " " + (d.parent.y + 100) + "," + d.parent.x
+            + " " + d.parent.y + "," + d.parent.x;
+      });
+
+  var node = g.selectAll(".node")
+      .data(root.descendants())
+    .enter().append("g")
+      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+  node.append("circle")
+      .attr("r", 2.5);
+
+  node.append("text")
+      .attr("dy", 3)
+      .attr("x", function(d) { return d.children ? -8 : 8; })
+      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
+});
+
+</script>
 
 </body>
 
