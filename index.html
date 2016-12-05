@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
+
     <title>Social Graphs 2016 Final Assignment</title>
 
     <!-- scrolling bar template home: https://startbootstrap.com/template-overviews/scrolling-nav/ -->
@@ -18,39 +20,6 @@
 
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
-
-    <style type="text/css">
-      .block{
-        display: inline-block;
-      }
-    </style>
-
-    <style>
-
-    .node circle {
-      fill: #999;
-    }
-
-    .node text {
-      font: 10px sans-serif;
-    }
-
-    .node--internal circle {
-      fill: #555;
-    }
-
-    .node--internal text {
-      text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
-    }
-
-    .link {
-      fill: none;
-      stroke: #555;
-      stroke-opacity: 0.4;
-      stroke-width: 1.5px;
-    }
-
-</style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -125,7 +94,7 @@
                 <div class="col-lg-12">
                     <h1>Section 1</h1>
                       <div class="container block" id="graph1">
-                        <svg width="960" height="2000"></svg>
+                      <div id="86adc34d-5a90-402b-acfb-cb3094f2c5fd" style="height: 700px; width: 100%;" class="plotly-graph-div"></div>
                       </div>
                 </div>
             </div>
@@ -168,8 +137,8 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-    <!-- d3 -->
-    <script src="js/d3.min.js"></script>
+    <!-- plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -178,55 +147,8 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/scrolling-nav.js"></script>
 
-<script>
 
-var svg = d3.select("#graph1").select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    g = svg.append("g").attr("transform", "translate(40,0)");
-
-var tree = d3.cluster()
-    .size([height, width - 160]);
-
-var stratify = d3.stratify()
-    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
-
-d3.csv("flare.csv", function(error, data) {
-  if (error) throw error;
-
-  var root = stratify(data)
-      .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); });
-
-  tree(root);
-
-  var link = g.selectAll(".link")
-      .data(root.descendants().slice(1))
-    .enter().append("path")
-      .attr("class", "link")
-      .attr("d", function(d) {
-        return "M" + d.y + "," + d.x
-            + "C" + (d.parent.y + 100) + "," + d.x
-            + " " + (d.parent.y + 100) + "," + d.parent.x
-            + " " + d.parent.y + "," + d.parent.x;
-      });
-
-  var node = g.selectAll(".node")
-      .data(root.descendants())
-    .enter().append("g")
-      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
-      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
-
-  node.append("circle")
-      .attr("r", 2.5);
-
-  node.append("text")
-      .attr("dy", 3)
-      .attr("x", function(d) { return d.children ? -8 : 8; })
-      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
-      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
-});
-
-</script>
+<script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("86adc34d-5a90-402b-acfb-cb3094f2c5fd", [{"y": [63, 66, 80, 67, 68, 82, 83, 110, 105, 116, 133, 130, 141, 173, 162, 181, 175, 150, 176, 200, 209, 190, 196, 198, 177, 182, 169, 184, 159, 146, 105], "x": ["1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"], "type": "bar"}], {"showlegend": false, "yaxis": {"title": "Amount"}, "title": "Amount of found movies in years 1986 - 2016", "height": 700, "barmode": "group", "xaxis": {"tickangle": -45, "title": "Year"}, "margin": {"b": 250, "r": 50, "pad": 4, "t": 100, "l": 200}}, {"linkText": "Export to plot.ly", "showLink": true})</script>
 
 </body>
 
