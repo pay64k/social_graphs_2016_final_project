@@ -61,7 +61,7 @@
                         <a class="page-scroll" href="#Section2">Directos Stats</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#Section3">Section 3</a>
+                        <a class="page-scroll" href="#Section3">Actors Stats</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#Section4">Section 4</a>
@@ -91,7 +91,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Dataset -->
     <div class="block">
     <section id="Section1" class="normal-section block">
         <div class="container block">
@@ -104,26 +104,27 @@
         </div>
     </section>
  </div>
-    <!-- Services Section -->
+    <!-- Directos Stats -->
     <div class="block">
     <section id="Section2" class="normal-section block">
         <div class="container block">
             <div class="row block">
                 <div class="col-lg-12 block">
                     <h1>Director Stats</h1>
-                    <div class="container block" id="directors_graphs"></div>
+                      <div class="container block" id="directors_graphs"></div>
                 </div>
             </div>
         </div>
     </section>
     </div>
-    <!-- Contact Section -->
+    <!-- Actors Stats -->
     <div class="block">
     <section id="Section3" class="normal-section block">
         <div class="container block">
             <div class="row block">
                 <div class="col-lg-12 block">
-                    <h1>Section 3</h1>
+                    <h1>Actors Stats</h1>
+                      <div class="container block" id="actors_graphs"></div>
                 </div>
             </div>
         </div>
@@ -161,6 +162,10 @@
 
     $(function(){
       $("#directors_graphs").load("notebooks/graphs_for_directors_v7.html"); 
+    });
+
+    $(function(){
+      $("#actors_graphs").load("notebooks/graphs_actors_v7.html"); 
     });
 
     </script>
