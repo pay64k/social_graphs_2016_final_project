@@ -183,7 +183,6 @@
                     <h3 style="text-align: left;"><a href="notebooks/html/actors_analysis.html" target="_blank">See Actors Notebook here</a></h3>
 
                       <div class="container block" id="actors_graphs"></div>
-                      <p style="text-align: justify;">Some words here bla</p>
                       <pre style="text-align: left;">
 The most profitable actor (money what their movie earned (gross)): 
 
@@ -237,6 +236,10 @@ Toby Hemingway    0.000158
 Samuel Roukin     0.000217
 Dylan Moran       0.000217
 </pre>
+<br>
+                <p style="text-align: justify;">
+                  The most profitable actors in terms of gross was very well knwon famous characters like Tom Hanks Helena Bonham Carte or Tom Felton. All of them bring profit of 7 and more billion $. It is interesting though that they didn't raise the money of the movie many times. Anyone of them is in first 10 most profitable actors ratio- wise. It may come to conclusion that Samuel L. Jackson Bruce Willis and Tom Cruise who were on top three positions in most profitable ratio-wise ranking of actors are better actors who by their performance can increase the profit from the movie more. In terms of worst profitable actors there is no surprise. none of the well known actor is there (unfortunately) cause it would make a big disruption in hollywood world.
+                </p>
                 </div>
             </div>
         </div>
@@ -251,25 +254,52 @@ Dylan Moran       0.000217
                     <h1>Networks</h1>
 
                     <h3 style="text-align: left;"><a href="notebooks/html/_change_.html" target="_blank">See Networks Notebook here</a></h3>
-
+                      <p style="text-align: justify;">
+                        For this project the key was to analyze the network of actors and directors. To do that we created two networks one consisted only of actors connected between each other based on the movies in which they were playing togeter as well as directors network where each of the node represented by the director were conected by edge (actor) withwhom director was working with.
+                      </p>
                     <img src="img/actors_network.PNG">
 
                       <pre style="text-align: left;">
 Number of nodes: 4663
 Number of links: 62192
 
-Most frequent pairs of actors:
+Most frequent pairs of actors
 Adam Sandler and Rob Schneider {'weight': 13}
+Daniel Radcliffe and Tom Felton {'weight': 8}
 Jim Cummings and Frank Welker {'weight': 8}
 Kevin James and Adam Sandler {'weight': 8}
-Daniel Radcliffe and Tom Felton {'weight': 8}
 Adam Sandler and Steve Buscemi {'weight': 8}
 John Cusack and Joan Cusack {'weight': 7}
 Quentin Tarantino and Samuel L. Jackson {'weight': 6}
 Johnny Depp and Helena Bonham Carter {'weight': 6}
 George Clooney and Matt Damon {'weight': 6}
 Matt Damon and Ben Affleck {'weight': 6}
+Nicole Kidman and Tom Cruise {'weight': 6}
+James Franco and Seth Rogen {'weight': 6}
+Jonah Hill and Seth Rogen {'weight': 5}
+Kevin Smith and Ben Affleck {'weight': 5}
+Kevin Smith and Ethan Suplee {'weight': 5}
+Bill Nighy and Martin Freeman {'weight': 5}
+Daniel Radcliffe and Alan Rickman {'weight': 5}
+Samuel L. Jackson and Bruce Willis {'weight': 5}
+George Clooney and Brad Pitt {'weight': 5}
+Dolph Lundgren and Sylvester Stallone {'weight': 5}
+Danny Trejo and Steve Buscemi {'weight': 5}
+Matt Damon and Casey Affleck {'weight': 5}
+Matt Damon and Brad Pitt {'weight': 5}
+Paul Rudd and Seth Rogen {'weight': 5}
+Pamela Adlon and Mae Whitman {'weight': 5}
+Morgan Freeman and Ashley Judd {'weight': 5}
+Tom Felton and Alan Rickman {'weight': 5}
+Owen Wilson and Ben Stiller {'weight': 5}
+Hugh Jackman and Famke Janssen {'weight': 5}
+Danny Glover and Mel Gibson {'weight': 5}
                       </pre>
+                      <br>
+                      <p style="text-align: justify;">
+                      As we may observe the network of actors is consisted of 4663 nodes representing actors. They are connected between each other 62192 times. Interesting for us was to present who was playing the most frequent with whom. We may see that amount of actors who were playing together in many movies is very big wich means that the network is very dense. Recrod is Adam Sandler and Rob Schneider who were playing together 13 times. It is showing that they are good friends and this fact is also confirmed by the information which you may find on your own. Sandler is playing in almost every Schneider movie (Schneider is often porducer and actor in the same time).<br><br>
+                      Daniel Radcliffe and Tom Felton are also often together. This is mainly because of the Harry Potter movies in which they were playing. 8 movies 8 times they were together.
+                      </p>
 
                   <h3 style="text-align: left;">Betweenness centrality for actors network:</h3>
                     <p style="text-align: justify;">
@@ -284,6 +314,9 @@ Matt Damon and Ben Affleck {'weight': 6}
                       <strong>John Goodman</strong> with value of 0.00884639332967<br>
                       <strong>Christopher Walken</strong> with value of 0.00880429873827<br>
                       </p>
+                    <p style="text-align: justify;">
+                    In terms of betweenes centrality measurement the most central Actor is Samuel L. Jackson, second one is Bruce Willis and the 3rd one Frnak Welker. They all are quite significantly more central than the others. It is consecutively 8%, 3% and 2% from the 4th Nicolas Cage. It may be interesting to see what is the influence of it on relations between actors. But form where take this data to have opportunity to correlate? Maybe Twitter but it is another project.
+                    </p>
 
                   <h3 style="text-align: left;">Eigenvector centrality:</h3>
                     <p style="text-align: justify;">
@@ -299,7 +332,17 @@ Matt Damon and Ben Affleck {'weight': 6}
                       <strong>J.K. Simmons</strong> with value of 0.0827427545435<br>
                       </p>
                       <br>
-                    <p style="text-align: justify;">Description</p>
+                    <p style="text-align: justify;">
+                    The most central actors are Samuel L Jackson, Bruce willis and Matt Damon. It is almostthe same what betwennes centrality shown with the difference that Matt Damon has more influence on the network when we calculate eigenvector centrality. It means that he was playing with more actors with higher importance (more nodes) than Frank Walker who was 3rd in terms of betweenes centrality. It may be caused by the fact that Matt Damon was playing mainly in super production together with famous well known actors which had more influence on the network.
+                    </p>
+
+                    <h3 style="text-align: left;">Shortest paths</h3>
+                    <img src="img/shortest_path_directors.png"><br>
+                    <p style="text-align: justify;">
+                      Majority of the actors is only 3 handshakes from each other. That is ilustrating the most how dense the structure of actors netwrk is. The longest route is 6 which is still less than global average - 7. It means that the holywood is very dense and everybody knows each other.
+                    </p>
+
+                    
                     <br><hr><br>
                     <img src="img/directors_network.png">
                     <pre style="text-align: left;">
@@ -329,7 +372,7 @@ Martin (I) Scorsese with value of 63
 Ivan Reitman with value of 62
                   </pre>  
 
-                      <div class="container block" id="actors_networks_graphs"></div>
+                      <!-- <div class="container block" id="actors_networks_graphs"></div> -->
                 </div>
             </div>
         </div>
