@@ -227,7 +227,25 @@ Dylan Moran       0.000217
                 <div class="col-lg-12 block">
                     <h1>Networks</h1>
                     <img src="img/actors_network.png">
-                      <h3>Betweenness centrality for actors network.</h3>
+
+                      <pre style="text-align: left;">
+Number of nodes: 4663
+Number of links: 62192
+
+Most frequent pairs of actors:
+Adam Sandler and Rob Schneider {'weight': 13}
+Jim Cummings and Frank Welker {'weight': 8}
+Kevin James and Adam Sandler {'weight': 8}
+Daniel Radcliffe and Tom Felton {'weight': 8}
+Adam Sandler and Steve Buscemi {'weight': 8}
+John Cusack and Joan Cusack {'weight': 7}
+Quentin Tarantino and Samuel L. Jackson {'weight': 6}
+Johnny Depp and Helena Bonham Carter {'weight': 6}
+George Clooney and Matt Damon {'weight': 6}
+Matt Damon and Ben Affleck {'weight': 6}
+                      </pre>
+
+                  <h3 style="text-align: left;">Betweenness centrality for actors network:</h3>
                     <p style="text-align: justify;">
                       <strong>Samuel L. Jackson</strong> with value of 0.0190923378663<br>
                       <strong>Bruce Willis</strong> with value of 0.0146317181357<br>
@@ -240,7 +258,51 @@ Dylan Moran       0.000217
                       <strong>John Goodman</strong> with value of 0.00884639332967<br>
                       <strong>Christopher Walken</strong> with value of 0.00880429873827<br>
                       </p>
+
+                  <h3 style="text-align: left;">Eigenvector centrality:</h3>
+                    <p style="text-align: justify;">
+                      <strong>Samuel L. Jackson</strong> with value of 0.122408785363<br>
+                      <strong>Bruce Willis</strong> with value of 0.116849841518<br>
+                      <strong>Matt Damon</strong> with value of 0.104437895613<br>
+                      <strong>Robert De Niro</strong> with value of 0.101148460876<br>
+                      <strong>Morgan Freeman</strong> with value of 0.0980208625364<br>
+                      <strong>John Cusack</strong> with value of 0.0910546823135<br>
+                      <strong>Steve Buscemi</strong> with value of 0.0887923547864<br>
+                      <strong>Robin Williams</strong> with value of 0.0877423310874<br>
+                      <strong>Brad Pitt</strong> with value of 0.0841875498816<br>
+                      <strong>J.K. Simmons</strong> with value of 0.0827427545435<br>
+                      </p>
+                      <br>
                     <p style="text-align: justify;">Description</p>
+                    <br><hr><br>
+                    <img src="img/directors_network.png">
+                    <pre style="text-align: left;">
+Number of nodes: 6448
+Number of links: 24539
+
+20 Directors with the greatest actors network:
+Woody Allen with value of 146
+Steven Spielberg with value of 109
+Clint Eastwood with value of 105
+Ridley Scott with value of 99
+Ron (I) Howard with value of 95
+Oliver (I) Stone with value of 84
+Steven Soderbergh with value of 81
+Barry (I) Levinson with value of 81
+Renny Harlin with value of 78
+Joel Schumacher with value of 77
+Rob Reiner with value of 76
+Spike Lee with value of 74
+Tony (I) Scott with value of 69
+Chris Columbus with value of 66
+Stephen Herek with value of 66
+Garry (I) Marshall with value of 65
+Robert Zemeckis with value of 64
+Tim (I) Burton with value of 64
+Martin (I) Scorsese with value of 63
+Ivan Reitman with value of 62
+                  </pre>  
+
                       <div class="container block" id="actors_networks_graphs"></div>
                 </div>
             </div>
@@ -304,17 +366,17 @@ Dylan Moran       0.000217
     <script src="js/scrolling-nav.js"></script>
 
     <script> 
-    $(function(){
-      $("#dataset_graphs").load("notebooks/graphs_for_v7_analisys.html"); 
-    });
+    // $(function(){
+    //   $("#dataset_graphs").load("notebooks/graphs_for_v7_analisys.html"); 
+    // });
 
-    $(function(){
-      $("#directors_graphs").load("notebooks/graphs_for_directors_v7.html"); 
-    });
+    // $(function(){
+    //   $("#directors_graphs").load("notebooks/graphs_for_directors_v7.html"); 
+    // });
 
-    $(function(){
-      $("#actors_graphs").load("notebooks/graphs_actors_v7.html"); 
-    });
+    // $(function(){
+    //   $("#actors_graphs").load("notebooks/graphs_actors_v7.html"); 
+    // });
 
     </script>
 
