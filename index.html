@@ -64,7 +64,7 @@
                         <a class="page-scroll" href="#Section3">Actors Stats</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#Section4">Actors Network</a>
+                        <a class="page-scroll" href="#Section4">Networks</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#Section5">Scripts Analysis</a>
@@ -104,7 +104,35 @@
             <div class="row block">
                 <div class="col-lg-12">
                     <h1>About Dataset</h1>
-                    <a href="notebooks/html/dataset_analysis.html" target="_blank">Dataset Notebook</a>
+                    <p style="text-align: justify;">We have downloaded whole IMDb database from <a href="http://www.imdb.com/interfaces" target="_blank">http://www.imdb.com/interfaces</a> and generated a smaller subset based on our requirements:
+                    <ul style="text-align: justify;">
+                      <li>An entry has to be a movie - all TV series are not taken into consideration</li>
+                      <li>There must be director, genre, rating, budget, gross, cast, plot, running time</li>
+                      <li>The movie has to be in English</li>
+                      <li>The movie has to be from years 1986-2016</li>
+                      <li>In the cast of the movie there must 6 actors from Top 10K list</li>
+                    </ul>                    
+                    </p>
+                    <p style="text-align: justify;">Our files of interest are of total size of ~6.7GB and are in plain text format. 
+                    Since many of the movies didn't have fields like plot or budget specified we used Wikipedia API in order to fill in the missing info.
+                    For the above mentioned Top 10K list we did some screen scraping and parsed the result into a single file. The list has been taken from 
+                    <a href="http://www.imdb.com/search/name?gender=male,female" target="_blank">IMDb Most Popular Females/Males</a> based on STARmeter as was for week 45 in 2016.
+                    <br><br>
+                    Some of the basic stats are:
+                    </p>
+                    <ul style="text-align: justify;">
+                      <li>Amount of all movies: 4376</li>
+                      <li>Amount of all actors: 4663</li>
+                      <li>Amount of all directors: 1921</li>
+                    </ul>
+                    <p style="text-align: justify;">
+                      Below you will find more detailed statistics of our dataset. You can always look at our dataset
+                      <a href="data_table/dataset_table.html" target="_blank">here</a>. All the source code used for generating our dataset can be found
+                      under <a class="page-scroll" href="#Section6">Source</a> section.
+                      <br>
+                      <h3 style="text-align: left;"><a href="notebooks/html/dataset_analysis.html" target="_blank">See Dataset Notebook here</a></h3>
+                    </p>
+                    
                       <div class="container block" id="dataset_graphs"></div>
                 </div>
             </div>
@@ -191,13 +219,13 @@ Dylan Moran       0.000217
         </div>
     </section>
     </div>
-    <!-- Actors Networks -->
+    <!-- Networks -->
     <div class="block">
     <section id="Section4" class="normal-section block">
         <div class="container block">
             <div class="row block">
                 <div class="col-lg-12 block">
-                    <h1>Actors Networks</h1>
+                    <h1>Networks</h1>
                     <img src="img/actors_network.png">
                       <h3>Betweenness centrality for actors network.</h3>
                     <p style="text-align: justify;">
