@@ -21,6 +21,8 @@
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
+    <link type="text/css" rel="stylesheet" href="css/lightGallery.min.css" /> 
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -75,6 +77,9 @@
                     <li>
                         <a href="data_table/dataset_table.html" target="_blank">Our Dataset</a>
                     </li>
+                    <li>
+                        <a href="http://kurser.dtu.dk/course/02805" target="_blank"><strong>Course 02805 DTU, 2016</strong></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -88,8 +93,12 @@
         <div class="container block">
             <div class="row block">
                 <div class="col-lg-12">
-                    <h1>Zie Project</h1>
-                    <p>Notebooks for each section are linked in the beginning of each section. Please see the dataset <a href="data_table/dataset_table.html" target="_blank">here</a>.</p>
+                    <h1>Social Graphs And Interactions: Final Assignment B</h1>
+                    <p style="text-align: justify;">
+                    Notebooks for each section are linked in the beginning of each section and in the
+                    <a class="page-scroll" href="#Section6">Source</a> Section. 
+                    Please see the dataset <a href="data_table/dataset_table.html" target="_blank">here</a>.
+                    </p>
 
                     <a class="btn btn-default page-scroll" href="#Section1">Let's go!</a>
                 </div>
@@ -104,6 +113,9 @@
             <div class="row block">
                 <div class="col-lg-12">
                     <h1>About Dataset</h1>
+
+                    <h3 style="text-align: left;"><a href="notebooks/html/dataset_analysis.html" target="_blank">See Dataset Notebook here</a></h3>
+
                     <p style="text-align: justify;">We have downloaded whole IMDb database from <a href="http://www.imdb.com/interfaces" target="_blank">http://www.imdb.com/interfaces</a> and generated a smaller subset based on our requirements:
                     <ul style="text-align: justify;">
                       <li>An entry has to be a movie - all TV series are not taken into consideration</li>
@@ -130,7 +142,7 @@
                       <a href="data_table/dataset_table.html" target="_blank">here</a>. All the source code used for generating our dataset can be found
                       under <a class="page-scroll" href="#Section6">Source</a> section.
                       <br>
-                      <h3 style="text-align: left;"><a href="notebooks/html/dataset_analysis.html" target="_blank">See Dataset Notebook here</a></h3>
+                      
                     </p>
                     
                       <div class="container block" id="dataset_graphs"></div>
@@ -146,6 +158,9 @@
             <div class="row block">
                 <div class="col-lg-12 block">
                     <h1>Director Stats</h1>
+
+                    <h3 style="text-align: left;"><a href="notebooks/html/_change_.html" target="_blank">See Directors Notebook here</a></h3>
+
                       <div class="container block" id="directors_graphs"></div>
                 </div>
             </div>
@@ -159,6 +174,9 @@
             <div class="row block">
                 <div class="col-lg-12 block">
                     <h1>Actors Stats</h1>
+
+                    <h3 style="text-align: left;"><a href="notebooks/html/_change_.html" target="_blank">See Actors Notebook here</a></h3>
+
                       <div class="container block" id="actors_graphs"></div>
                       <p style="text-align: justify;">Some words here bla</p>
                       <pre style="text-align: left;">
@@ -226,6 +244,9 @@ Dylan Moran       0.000217
             <div class="row block">
                 <div class="col-lg-12 block">
                     <h1>Networks</h1>
+
+                    <h3 style="text-align: left;"><a href="notebooks/html/_change_.html" target="_blank">See Networks Notebook here</a></h3>
+
                     <img src="img/actors_network.png">
 
                       <pre style="text-align: left;">
@@ -316,7 +337,52 @@ Ivan Reitman with value of 62
             <div class="row block">
                 <div class="col-lg-12 block">
                     <h1>Scripts Analysis</h1>
-                      <div class="container block" id="scripts_part"></div>
+
+                    <h3 style="text-align: left;"><a href="notebooks/html/movie_scripts_analysis.html" target="_blank">See Scripts Notebook here</a></h3>
+
+                    <p style="text-align: justify;">
+                    All scripts has been scrapped from <a href="http://www.imsdb.com/all%20scripts/">www.imsdb.com</a>. Please refer to 
+                    <a class="page-scroll" href="#Section6">Source</a> section to see the code.
+                    
+                    </p>
+                      <div class="container block" id="scripts_part">
+                      <!-- this is nice for thumbnails: http://makethumbnails.com/#dropzone -->
+                        <div id="lightgallery">
+                          <a href="img/wc/action.png" data-sub-html="<h1>Action</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/action_tn.jpg" />
+                              <div class="caption"><h4>Action</h4></div>
+                          </a>
+                          <a href="img/wc/adventure.png" data-sub-html="<h1>Adventure</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/adventure_tn.jpg" />
+                              <div class="caption"><h4>Adventure</h4></div>
+                          </a>
+                          <a href="img/wc/biography.png" data-sub-html="<h1>Biography</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/biography_tn.jpg" />
+                              <div class="caption"><h4>Biography</h4></div>
+                          </a>
+                          <a href="img/wc/comedy.png" data-sub-html="<h1>Comedy</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/comedy_tn.jpg" />
+                              <div class="caption"><h4>Comedy</h4></div>
+                          </a>
+                          <a href="img/wc/crime.png" data-sub-html="<h1>Crime</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/crime_tn.jpg" />
+                              <div class="caption"><h4>Crime</h4></div>
+                          </a>
+                          <a href="img/wc/drama.png" data-sub-html="<h1>Drama</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/drama_tn.jpg" />
+                              <div class="caption"><h4>Drama</h4></div>
+                          </a>
+                          <a href="img/wc/horror.png" data-sub-html="<h1>Horror</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/horror_tn.jpg" />
+                              <div class="caption"><h4>Horror</h4></div>
+                          </a>
+                          <a href="img/wc/mystery.png" data-sub-html="<h1>Mystery</h1>">
+                              <img style="margin:10px;" src="img/wc/tn/mystery_tn.jpg" />
+                              <div class="caption"><h4>Mystery</h4></div>
+                          </a>
+                        </div>
+
+                      </div>
                 </div>
             </div>
         </div>
@@ -329,6 +395,16 @@ Ivan Reitman with value of 62
             <div class="row block">
                 <div class="col-lg-12 block">
                     <h1>Source Code</h1>
+                    <h2 style="text-align: left;">All notebooks:</h2>
+                    <p align="left">
+                    <strong>All notebooks in order they appeared on the web site:</strong><br>
+                    <a href="notebooks/html/_change_.html" target="_blank">Dataset Notebook</a><br>
+                    <a href="notebooks/html/_change_.html" target="_blank">Directors Notebook</a><br>
+                    <a href="notebooks/html/_change_.html" target="_blank">Actors Notebook</a><br>
+                    <a href="notebooks/html/_change_.html" target="_blank">Networks Notebook</a><br>
+                    <a href="notebooks/html/movie_scripts_analysis.html" target="_blank">Scripts Notebook</a><br>
+                    </p>
+                    <h2 style="text-align: left;">Source code:</h2>
                     <p align="left">
                       <!-- use pygmentize like this: pygmentize -f html -O full -o imdb_scrap.html imdb_scrap.py  -->
                       <strong>Dataset generation:</strong><br>
@@ -340,7 +416,7 @@ Ivan Reitman with value of 62
                       <a href="src_py/html/add_wiki_budgets.html" target="_blank">Filling missing budgets from wiki</a><br>
                       <a href="src_py/html/get_wiki_plots.html" target="_blank">Getting plots from wiki</a><br>
                       <a href="src_py/html/add_wiki_plots.html" target="_blank">Filling missing plots from wiki</a><br>
-                      <strong>Scripts scraping:</strong><br>
+                      <strong>imsdb.com Scripts scraping:</strong><br>
                       <a href="src_py/html/main.html" target="_blank">Main script</a><br>
                       <a href="src_py/html/helpers.html" target="_blank">Utlity</a><br>
                       <a href="src_py/html/scraper.html" target="_blank">Scraping part</a><br>
@@ -365,6 +441,11 @@ Ivan Reitman with value of 62
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/scrolling-nav.js"></script>
 
+    <!-- lightgallery plugins -->
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/lg-thumbnail.min.js"></script>
+    <script src="js/lg-fullscreen.min.js"></script>
+
     <script> 
     $(function(){
       $("#dataset_graphs").load("notebooks/graphs_for_v7_analisys.html"); 
@@ -378,6 +459,9 @@ Ivan Reitman with value of 62
       $("#actors_graphs").load("notebooks/graphs_actors_v7.html"); 
     });
 
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+    });
     </script>
 
 </body>
